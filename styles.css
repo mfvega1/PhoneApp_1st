@@ -619,19 +619,14 @@ body {
     }
 }
 
-.gallery-item {
+.gallery-animate {
     animation: slideInUp 0.6s ease forwards;
 }
 
-.gallery-item:nth-child(1) { animation-delay: 0.1s; }
-.gallery-item:nth-child(2) { animation-delay: 0.2s; }
-.gallery-item:nth-child(3) { animation-delay: 0.3s; }
-.gallery-item:nth-child(4) { animation-delay: 0.4s; }
-.gallery-item:nth-child(5) { animation-delay: 0.5s; }
-.gallery-item:nth-child(6) { animation-delay: 0.6s; }
+/* Animation delays applied via JavaScript for dynamic filtering */
 
 /* Responsive adjustments for very small screens */
-@media (max-width: 375px) {
+@media (max-width: 428px) {
     .brand-title {
         font-size: 2rem;
     }

@@ -89,19 +89,20 @@ function initializeGalleryFilters() {
             this.classList.add('active');
 
             // Filter gallery items with animation
-            galleryItems.forEach((item, index) => {
+            let visibleIndex = 0;
+            galleryItems.forEach((item) => {
                 const category = item.getAttribute('data-category');
                 
                 if (filterValue === 'all' || category === filterValue) {
+                    item.style.display = 'none';
                     setTimeout(() => {
                         item.style.display = 'block';
-                        item.style.animation = 'none';
-                        setTimeout(() => {
-                            item.style.animation = 'slideInUp 0.6s ease forwards';
-                        }, 10);
-                    }, index * 100);
+                        item.classList.add('gallery-animate');
+                    }, visibleIndex * 100);
+                    visibleIndex++;
                 } else {
                     item.style.display = 'none';
+                    item.classList.remove('gallery-animate');
                 }
             });
         });
@@ -112,9 +113,8 @@ function initializeGalleryFilters() {
 function animateGalleryItems() {
     const galleryItems = document.querySelectorAll('.gallery-item');
     galleryItems.forEach((item, index) => {
-        item.style.opacity = '0';
         setTimeout(() => {
-            item.style.animation = 'slideInUp 0.6s ease forwards';
+            item.classList.add('gallery-animate');
         }, index * 100);
     });
 }
@@ -258,6 +258,7 @@ function initializeSmoothAnimations() {
 }
 
 // Add floating animation to logo on scroll
+const SCROLL_THRESHOLD = 5; // Minimum scroll distance to trigger animation
 let lastScrollY = 0;
 window.addEventListener('scroll', function() {
     const logo = document.querySelector('.main-logo');
@@ -265,7 +266,7 @@ window.addEventListener('scroll', function() {
         const scrollY = window.scrollY;
         const scrollDelta = scrollY - lastScrollY;
         
-        if (Math.abs(scrollDelta) > 5) {
+        if (Math.abs(scrollDelta) > SCROLL_THRESHOLD) {
             logo.style.transform = `translateY(${scrollDelta * 0.1}px)`;
         }
         
