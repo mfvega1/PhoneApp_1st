@@ -121,13 +121,24 @@ function makeCall() {
 function showCallModal(number) {
     const modal = document.createElement('div');
     modal.className = 'call-modal';
-    modal.innerHTML = `
-        <div class="call-modal-content calling">
-            <h2>Calling...</h2>
-            <p>${number}</p>
-            <button class="end-call-btn">End Call</button>
-        </div>
-    `;
+    
+    const modalContent = document.createElement('div');
+    modalContent.className = 'call-modal-content calling';
+    
+    const heading = document.createElement('h2');
+    heading.textContent = 'Calling...';
+    
+    const numberParagraph = document.createElement('p');
+    numberParagraph.textContent = number;
+    
+    const endCallBtn = document.createElement('button');
+    endCallBtn.className = 'end-call-btn';
+    endCallBtn.textContent = 'End Call';
+    
+    modalContent.appendChild(heading);
+    modalContent.appendChild(numberParagraph);
+    modalContent.appendChild(endCallBtn);
+    modal.appendChild(modalContent);
 
     document.body.appendChild(modal);
 
@@ -140,7 +151,6 @@ function showCallModal(number) {
         }
     };
 
-    const endCallBtn = modal.querySelector('.end-call-btn');
     endCallBtn.addEventListener('click', closeCallModal);
 
     // Auto-close after specified time
