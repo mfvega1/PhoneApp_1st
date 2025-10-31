@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flower Shop Phone</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="phone-container">
+        <div class="phone-header">
+            <h1>🌸 Blossom Boutique 🌸</h1>
+            <p class="tagline">Your Local Flower Retail Store</p>
+        </div>
+        
+        <div class="tabs">
+            <button class="tab-btn active" data-tab="dialer">Dialer</button>
+            <button class="tab-btn" data-tab="contacts">Contacts</button>
+            <button class="tab-btn" data-tab="history">History</button>
+        </div>
+
+        <div class="tab-content active" id="dialer">
+            <div class="display">
+                <input type="text" id="phone-display" placeholder="Enter number" readonly>
+            </div>
+            
+            <div class="keypad">
+                <button class="key" data-key="1">1<span class="letters"></span></button>
+                <button class="key" data-key="2">2<span class="letters">ABC</span></button>
+                <button class="key" data-key="3">3<span class="letters">DEF</span></button>
+                <button class="key" data-key="4">4<span class="letters">GHI</span></button>
+                <button class="key" data-key="5">5<span class="letters">JKL</span></button>
+                <button class="key" data-key="6">6<span class="letters">MNO</span></button>
+                <button class="key" data-key="7">7<span class="letters">PQRS</span></button>
+                <button class="key" data-key="8">8<span class="letters">TUV</span></button>
+                <button class="key" data-key="9">9<span class="letters">WXYZ</span></button>
+                <button class="key" data-key="*">*<span class="letters"></span></button>
+                <button class="key" data-key="0">0<span class="letters">+</span></button>
+                <button class="key" data-key="#">#<span class="letters"></span></button>
+            </div>
+            
+            <div class="action-buttons">
+                <button class="action-btn delete-btn" id="delete-btn">⌫</button>
+                <button class="action-btn call-btn" id="call-btn">📞 Call</button>
+            </div>
+        </div>
+
+        <div class="tab-content" id="contacts">
+            <div class="contacts-list">
+                <div class="contact-item" data-number="555-0101">
+                    <div class="contact-icon">🌹</div>
+                    <div class="contact-info">
+                        <h3>Sales Department</h3>
+                        <p>555-0101</p>
+                    </div>
+                    <button class="contact-call-btn">📞</button>
+                </div>
+                <div class="contact-item" data-number="555-0102">
+                    <div class="contact-icon">🚚</div>
+                    <div class="contact-info">
+                        <h3>Delivery & Orders</h3>
+                        <p>555-0102</p>
+                    </div>
+                    <button class="contact-call-btn">📞</button>
+                </div>
+                <div class="contact-item" data-number="555-0103">
+                    <div class="contact-icon">💐</div>
+                    <div class="contact-info">
+                        <h3>Custom Arrangements</h3>
+                        <p>555-0103</p>
+                    </div>
+                    <button class="contact-call-btn">📞</button>
+                </div>
+                <div class="contact-item" data-number="555-0104">
+                    <div class="contact-icon">🌻</div>
+                    <div class="contact-info">
+                        <h3>Customer Service</h3>
+                        <p>555-0104</p>
+                    </div>
+                    <button class="contact-call-btn">📞</button>
+                </div>
+                <div class="contact-item" data-number="555-0105">
+                    <div class="contact-icon">💒</div>
+                    <div class="contact-info">
+                        <h3>Wedding Flowers</h3>
+                        <p>555-0105</p>
+                    </div>
+                    <button class="contact-call-btn">📞</button>
+                </div>
+                <div class="contact-item" data-number="555-0106">
+                    <div class="contact-icon">🎉</div>
+                    <div class="contact-info">
+                        <h3>Event Planning</h3>
+                        <p>555-0106</p>
+                    </div>
+                    <button class="contact-call-btn">📞</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="tab-content" id="history">
+            <div class="history-list" id="history-list">
+                <p class="empty-message">No call history yet</p>
+            </div>
+            <button class="clear-history-btn" id="clear-history-btn">Clear History</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
