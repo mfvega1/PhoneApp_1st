@@ -1,0 +1,49 @@
+<svg width="300" height="300" viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">
+  <!-- Spiral Flower 1 (Red) -->
+  <g transform="translate(80, 80)">
+    <path d="M 0,0 Q 10,-10 20,-5 Q 25,5 15,15 Q 0,20 -10,10 Q -15,-5 0,0 Z" fill="#E63946" opacity="0.9"/>
+    <path d="M 0,0 Q 8,-8 16,-4 Q 20,4 12,12 Q 0,16 -8,8 Q -12,-4 0,0 Z" fill="#DC2F41" opacity="0.8"/>
+    <path d="M 0,0 Q 6,-6 12,-3 Q 15,3 9,9 Q 0,12 -6,6 Q -9,-3 0,0 Z" fill="#E63946" opacity="0.7"/>
+    <circle cx="0" cy="0" r="3" fill="#FCD34D"/>
+    <line x1="0" y1="0" x2="0" y2="60" stroke="#10B981" stroke-width="3"/>
+  </g>
+  
+  <!-- Spiral Flower 2 (Pink) -->
+  <g transform="translate(150, 100)">
+    <path d="M 0,0 Q 12,-12 24,-6 Q 30,6 18,18 Q 0,24 -12,12 Q -18,-6 0,0 Z" fill="#EC4899" opacity="0.9"/>
+    <path d="M 0,0 Q 10,-10 20,-5 Q 25,5 15,15 Q 0,20 -10,10 Q -15,-5 0,0 Z" fill="#F06292" opacity="0.8"/>
+    <path d="M 0,0 Q 8,-8 16,-4 Q 20,4 12,12 Q 0,16 -8,8 Q -12,-4 0,0 Z" fill="#EC4899" opacity="0.7"/>
+    <circle cx="0" cy="0" r="4" fill="#FCD34D"/>
+    <line x1="0" y1="0" x2="0" y2="70" stroke="#10B981" stroke-width="4"/>
+  </g>
+  
+  <!-- Spiral Flower 3 (Purple) -->
+  <g transform="translate(220, 70)">
+    <path d="M 0,0 Q 11,-11 22,-5.5 Q 27.5,5.5 16.5,16.5 Q 0,22 -11,11 Q -16.5,-5.5 0,0 Z" fill="#9333EA" opacity="0.9"/>
+    <path d="M 0,0 Q 9,-9 18,-4.5 Q 22.5,4.5 13.5,13.5 Q 0,18 -9,9 Q -13.5,-4.5 0,0 Z" fill="#AB47BC" opacity="0.8"/>
+    <path d="M 0,0 Q 7,-7 14,-3.5 Q 17.5,3.5 10.5,10.5 Q 0,14 -7,7 Q -10.5,-3.5 0,0 Z" fill="#9333EA" opacity="0.7"/>
+    <circle cx="0" cy="0" r="3.5" fill="#FFD54F"/>
+    <line x1="0" y1="0" x2="0" y2="65" stroke="#10B981" stroke-width="3.5"/>
+  </g>
+  
+  <!-- Red Bow -->
+  <g transform="translate(150, 200)">
+    <!-- Left bow loop -->
+    <ellipse cx="-15" cy="0" rx="20" ry="15" fill="#E63946" opacity="0.9"/>
+    <!-- Right bow loop -->
+    <ellipse cx="15" cy="0" rx="20" ry="15" fill="#E63946" opacity="0.9"/>
+    <!-- Center knot -->
+    <circle cx="0" cy="0" r="8" fill="#DC2F41"/>
+    <!-- Bow tails -->
+    <path d="M -10,10 L -25,35 L -15,30 L -20,40 Z" fill="#E63946" opacity="0.85"/>
+    <path d="M 10,10 L 25,35 L 15,30 L 20,40 Z" fill="#E63946" opacity="0.85"/>
+  </g>
+  
+  <!-- Brand Text -->
+  <text x="150" y="260" font-family="Georgia, serif" font-size="22" font-weight="bold" text-anchor="middle" fill="#2D3748">
+    PR Floral
+  </text>
+  <text x="150" y="282" font-family="Georgia, serif" font-size="18" text-anchor="middle" fill="#4A5568">
+    Marketing
+  </text>
+</svg>
