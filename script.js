@@ -1,3 +1,8 @@
+// Constants
+const MAX_PHONE_NUMBER_LENGTH = 15;
+const MAX_CALL_HISTORY = 50;
+const AUTO_CLOSE_CALL_MODAL_MS = 5000;
+
 // Phone App State
 let currentNumber = '';
 let callHistory = JSON.parse(localStorage.getItem('callHistory')) || [];
@@ -72,7 +77,7 @@ function setupEventListeners() {
 
 // Add digit to display
 function addDigit(digit) {
-    if (currentNumber.length < 15) {
+    if (currentNumber.length < MAX_PHONE_NUMBER_LENGTH) {
         currentNumber += digit;
         phoneDisplay.value = currentNumber;
     }
@@ -100,9 +105,9 @@ function makeCall() {
     
     callHistory.unshift(callRecord);
     
-    // Keep only last 50 calls
-    if (callHistory.length > 50) {
-        callHistory = callHistory.slice(0, 50);
+    // Keep only last calls up to maximum
+    if (callHistory.length > MAX_CALL_HISTORY) {
+        callHistory = callHistory.slice(0, MAX_CALL_HISTORY);
     }
     
     localStorage.setItem('callHistory', JSON.stringify(callHistory));
@@ -126,21 +131,20 @@ function showCallModal(number) {
 
     document.body.appendChild(modal);
 
-    const endCallBtn = modal.querySelector('.end-call-btn');
-    endCallBtn.addEventListener('click', () => {
-        document.body.removeChild(modal);
-        currentNumber = '';
-        phoneDisplay.value = '';
-    });
-
-    // Auto-close after 5 seconds
-    setTimeout(() => {
+    // Helper function to close the modal and reset display
+    const closeCallModal = () => {
         if (document.body.contains(modal)) {
             document.body.removeChild(modal);
             currentNumber = '';
             phoneDisplay.value = '';
         }
-    }, 5000);
+    };
+
+    const endCallBtn = modal.querySelector('.end-call-btn');
+    endCallBtn.addEventListener('click', closeCallModal);
+
+    // Auto-close after specified time
+    setTimeout(closeCallModal, AUTO_CLOSE_CALL_MODAL_MS);
 }
 
 // Call from contact
